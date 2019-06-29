@@ -1,12 +1,35 @@
 import React from 'react';
-import './App.css';
+import Todos from './components/Todos';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>App</h1>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    todos: [
+      {
+        id: 1,
+        title: 'Clean workspace',
+        completed: false
+      },
+      {
+        id: 2,
+        title: 'Work on Coding projects on react',
+        completed: false
+      },
+      {
+        id: 3,
+        title: 'Built a business empire',
+        completed: false
+      }
+    ]
+  }
+
+  render() {
+    console.log(this.state.todos)
+    return (
+      <div className="App">
+        <Todos />
+      </div>
+    );
+  }
 }
 
 export default App;
